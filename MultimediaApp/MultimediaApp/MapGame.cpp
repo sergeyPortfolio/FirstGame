@@ -2,7 +2,8 @@
 #include <cstdlib>
 #include <iostream>
 
-	MapGame::MapGame(int x, int y) {
+	MapGame::MapGame(int x, int y) 
+	{
 		X = x;
 		Y = y;
 		decors = (X * Y) / 100 * 5;
@@ -31,14 +32,16 @@
 		}
 
 	}
-	MapGame :: ~MapGame() {
+	MapGame :: ~MapGame() 
+	{
 		for (int i = 0; i < X; i++) {
 			delete[]Map[i];
 		}
 		delete[]Map;
 	}
 
-	void MapGame::MapShow() {
+	void MapGame::MapShow() 
+	{
 		system("cls");
 		for (int i = 0; i < Y; i++) {
 			for (int j = 0; j < X; j++) {
@@ -51,7 +54,20 @@
 		}
 		*/
 	}
-	void MapGame::Set(int x, int y, char p) {
-		Map[y][x] = p;
+	int MapGame::Set(int x, int y, char p) 
+	{
+		if (Map[y][x] == ' ') 
+		{
+			Map[y][x] = p;
+			return 0;
+		}
+		else if (Map[y][x] = '#')
+		{
+			return -1;
+		}
+		else
+		{
+			return 1;
+		}
 	}
 

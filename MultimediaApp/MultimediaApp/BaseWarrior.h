@@ -6,13 +6,14 @@ protected:
 	int X;
 	int Y;
 	char picture;
-	int damage;
+	size_t damage;
 	int health;
 
 public:
 
 	virtual void Run() = 0;
-	virtual void Bet(int h) = 0;
+	virtual void Bet(size_t h) = 0;
+	virtual size_t Bump() = 0;
 
 };
 
