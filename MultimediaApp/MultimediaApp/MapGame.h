@@ -15,7 +15,8 @@ public:
 	MapGame(int x, int y);
 	~MapGame();
 	void MapShow();
-	int Set(int x, int y, char p);
-
+	void Set(int x, int y, char p, int lastX, int lastY);
+	int choice(int x, int y);
+	int check(int x, int y);
 };
 #endif

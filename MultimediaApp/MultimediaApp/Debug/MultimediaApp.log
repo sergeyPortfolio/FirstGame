@@ -1,5 +1,3 @@
 ﻿  MapGame.cpp
-  MultimediaApp.cpp
-  WarriorViking.cpp
-  Создание кода...
+d:\myprograms\gitproject\multimediaapp\multimediaapp\mapgame.cpp(68): warning C4805: !=: небезопасное смешение типа "char" и типа "bool" в операции
   MultimediaApp.vcxproj -> D:\MyPrograms\GitProject\MultimediaApp\Debug\MultimediaApp.exe

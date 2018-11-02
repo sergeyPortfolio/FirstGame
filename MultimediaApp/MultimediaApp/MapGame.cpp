@@ -54,16 +54,29 @@
 		}
 		*/
 	}
-	int MapGame::Set(int x, int y, char p) 
+	void MapGame::Set(int x, int y, char p, int lastX, int lastY) 
 	{
-		if (Map[y][x] == ' ') 
-		{
+		
 			Map[y][x] = p;
+			Map[lastY][lastX] = ' ';
+		
+		
+		
+
+	}
+	int MapGame:: choice(int x, int y) {
+		if ((Map[y-1][x] != (' '|| '#')) && (Map[y + 1][x] != (' ' || '#')) && (Map[y][x - 1] != (' ' || '#'))&& (Map[y][x + 1] != (' ' || '#')))
+		{
 			return 0;
 		}
-		else if (Map[y][x] = '#')
+		else
+			return 1;
+	}
+	
+	int MapGame:: check(int x, int y) {
+		if (Map[y][x] == '#' || Map[y][x] == '|' || Map[y][x] == '-')
 		{
-			return -1;
+			return 0;
 		}
 		else
 		{

@@ -6,9 +6,12 @@ class WarriorViking : public BaseWarrior {
 
 	
 public:
-	WarriorViking(int x, int y);
+	WarriorViking( MapGame &m);
 	void Run(MapGame &m);
 	void Bet(size_t h);
 	size_t Bump();
+	void  RunOrBump(MapGame &m, BaseWarrior *b, int numb);
+
+	
 };
 #endif
