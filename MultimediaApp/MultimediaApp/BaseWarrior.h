@@ -1,6 +1,8 @@
+
+/*#ifndef BASEWARRIOR_H
+#define BASEWARRIOR_H*/
+#pragma once
 #include "MapGame.h"
-#ifndef BASEWARRIOR_H
-#define BASEWARRIOR_H
 
 class BaseWarrior {
 protected:
@@ -21,4 +23,4 @@ public:
 };
 
 
-#endif
+//#endif

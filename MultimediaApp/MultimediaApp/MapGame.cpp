@@ -64,8 +64,9 @@
 		
 
 	}
-	int MapGame:: choice(int x, int y) {
-		if ((Map[y-1][x] != (' '|| '#')) && (Map[y + 1][x] != (' ' || '#')) && (Map[y][x - 1] != (' ' || '#'))&& (Map[y][x + 1] != (' ' || '#')))
+
+	int MapGame::choice(int x, int y) {
+		if ((Map[y - 1][x] == ' ' || Map[y - 1][x] == '#') && (Map[y + 1][x] == ' ' || Map[y + 1][x] == '#') && (Map[y][x - 1] == ' ' || Map[y][x - 1] == '#') && (Map[y][x + 1] == ' ' || Map[y][x + 1] == '#'))
 		{
 			return 0;
 		}

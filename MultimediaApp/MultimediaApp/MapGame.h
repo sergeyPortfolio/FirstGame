@@ -1,8 +1,7 @@
-#ifndef MAPGAME_H
-#define MAPGAME_H
- 
 
-
+/*#ifndef MAPGAME_H
+#define MAPGAME_H*/
+#pragma once
 class MapGame {
 private:
 	int X;
@@ -19,4 +18,4 @@ public:
 	int choice(int x, int y);
 	int check(int x, int y);
 };
-#endif
+//#endif

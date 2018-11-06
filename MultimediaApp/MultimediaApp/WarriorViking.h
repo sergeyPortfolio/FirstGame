@@ -1,7 +1,9 @@
+/*#ifndef WARRIORVIKING_H
+#define WARRIORVIKING_H*/
+#pragma once
 #include "BaseWarrior.h"
 #include "MapGame.h"
-#ifndef WARRIORVIKING_H
-#define WARRIORVIKING_H
+
 class WarriorViking : public BaseWarrior {
 
 	
@@ -14,4 +16,4 @@ public:
 
 	
 };
-#endif
+//#endif

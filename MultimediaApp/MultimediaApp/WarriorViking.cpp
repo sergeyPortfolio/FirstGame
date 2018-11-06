@@ -85,13 +85,7 @@
 		int choice = m.choice(X, Y);
 		if (choice == 1)
 		{
-			for (int i = 0; i < numb; i++)
-			{
-
-				b[i].Bet(Bump());
-
-
-			}
+			Bet(b->Bump());
 		}
 		else if (choice == 0) {
 			Run(m);
