@@ -1,69 +1,73 @@
 #include "BaseWarrior.h"
 #include "WarriorViking.h"
-#include "MapGame.h"
+#include "C_Map.h"
 #include <cstdlib>
 
-
-
-	WarriorViking::WarriorViking( MapGame &m) 
-	{
 	
-		
-		
-		picture = 'V';
+	WarriorViking::WarriorViking(C_Map &m)
+	{		
+		m_isAlive = true;
+		characterSymbol = 'V';
 		health = 100;
-
-	constr:
-		X = rand() % 20 + 2;
-		Y = rand() % 20 + 2;
-		if (m.check(X, Y) != 0 ) {
-			m.Set(X, Y, picture, 1, 1);
+		bool forWhile = true;
+		while (forWhile) {
+			m_pos.first = rand() % 20 + 2;
+			m_pos.second = rand() % 20 + 2;
+			if (m.check(m_pos.first, m_pos.second) != 0)
+			{
+				m.Set(m_pos.first, m_pos.second, characterSymbol, 1, 1);
+				forWhile = false;
+			}
 		}
-		else goto constr;
 
 	}
-	void WarriorViking :: Run(MapGame &m) 
+	void WarriorViking :: Run(C_Map &m)
 	{
-		Start:
-		int random = rand() % 3 - 0;
-		switch (random)
+		bool forWhile = true;
+		while (forWhile)
 		{
-			case 0: if (m.check(X, Y + 1) != 0) 
-						{ lastY = Y; 
-						lastX = X; 
-						Y++; 
-						m.Set(X, Y, picture, lastX, lastY); 
-						}
-					else
-						goto Start;  break;
-			case 1: if (m.check(X + 1, Y) != 0)  
-						{ lastX = X; 
-						lastY = Y; 
-						X++; 
-						m.Set(X, Y, picture, lastX, lastY);
-						}
-					else 
-						goto Start;  break;
-			case 2: if (m.check(X, Y - 1) != 0)
-						{
-						lastY = Y;
-						lastX = X;
-						Y--;
-						m.Set(X, Y, picture, lastX, lastY);
-						}
-					else
-						goto Start;  break;
-			case 3: if (m.check(X - 1, Y) != 0)
-						{
-						lastX = X;
-						lastY = Y;
-						X--;
-						m.Set(X, Y, picture, lastX, lastY);
-						}
-					else
-						goto Start;  break;
+			int random = rand() % 3 - 0;
+			switch (random)
+			{
+			case 0: if (m.check(m_pos.first, m_pos.second + 1) != 0)
+			{
+				m_posLast.second = m_pos.second;
+				m_posLast.first = m_pos.first;
+				m_pos.second++;
+				m.Set(m_pos.first, m_pos.second, characterSymbol, m_posLast.first, m_posLast.second);
+				forWhile = false;
+			} break;
+
+
+			case 1: if (m.check(m_pos.first + 1, m_pos.second) != 0)
+			{
+				m_posLast.first  = m_pos.first;
+				m_posLast.second = m_pos.second;
+				m_pos.first++;
+				m.Set(m_pos.first, m_pos.second, characterSymbol, m_posLast.first, m_posLast.second);
+				forWhile = false;
+			} break;
+			case 2: if (m.check(m_pos.first, m_pos.second - 1) != 0)
+			{
+				m_posLast.second = m_pos.second;
+				m_posLast.first = m_pos.first;
+				m_pos.second--;
+				m.Set(m_pos.first, m_pos.second, characterSymbol, m_posLast.first, m_posLast.second);
+				forWhile = false;
+			}
+					break;
+			case 3: if (m.check(m_pos.first - 1, m_pos.second) != 0)
+			{
+				m_posLast.first = m_pos.first;
+				m_posLast.second = m_pos.second;
+				m_pos.first--;
+				m.Set(m_pos.first, m_pos.second, characterSymbol, m_posLast.first, m_posLast.second);
+				forWhile = false;
+			}
+					break;
 			default:
 				break;
+			}
 		}
 
 		
@@ -72,7 +76,10 @@
 	{
 		
 		health -= h;
-		
+		if (health <= 0) {
+			m_isAlive = false;
+		}
+
 
 	}
 	size_t WarriorViking ::Bump()
@@ -81,8 +88,8 @@
 		return damage; 
 	}
 	
-	void WarriorViking:: RunOrBump(MapGame &m, BaseWarrior *b, int numb) {
-		int choice = m.choice(X, Y);
+	void WarriorViking:: RunOrBump(C_Map &m, BaseWarrior *b, int numb) {
+		int choice = m.choice(m_pos.first, m_pos.second);
 		if (choice == 1)
 		{
 			Bet(b->Bump());

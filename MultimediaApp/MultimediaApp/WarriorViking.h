@@ -2,17 +2,17 @@
 #define WARRIORVIKING_H*/
 #pragma once
 #include "BaseWarrior.h"
-#include "MapGame.h"
+#include "C_Map.h"
 
 class WarriorViking : public BaseWarrior {
 
 	
 public:
-	WarriorViking( MapGame &m);
-	void Run(MapGame &m);
+	WarriorViking(C_Map &m);
+	void Run(C_Map &m);
 	void Bet(size_t h);
 	size_t Bump();
-	void  RunOrBump(MapGame &m, BaseWarrior *b, int numb);
+	void  RunOrBump(C_Map &m, BaseWarrior *b, int numb);
 
 	
 };

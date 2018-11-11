@@ -151,13 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MapGame.cpp" />
+    <ClCompile Include="C_Map.cpp" />
     <ClCompile Include="MultimediaApp.cpp" />
     <ClCompile Include="WarriorViking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseWarrior.h" />
-    <ClInclude Include="MapGame.h" />
+    <ClInclude Include="C_Map.h" />
     <ClInclude Include="WarriorViking.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
