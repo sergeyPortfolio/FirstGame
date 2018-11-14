@@ -1,2 +1,12 @@
-﻿  MultimediaApp.cpp
-  MultimediaApp.vcxproj -> D:\MyPrograms\MultimediaApp\Debug\MultimediaApp.exe
+﻿  C_Map.cpp
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(12): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(15): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(20): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(21): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(29): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(40): warning C4018: <: несоответствие типов со знаком и без знака
+d:\myprograms\gitproject\multimediaapp\multimediaapp\c_map.cpp(41): warning C4018: <: несоответствие типов со знаком и без знака
+  MultimediaApp.cpp
+  WarriorViking.cpp
+  Создание кода...
+  MultimediaApp.vcxproj -> D:\MyPrograms\GitProject\MultimediaApp\Debug\MultimediaApp.exe
